@@ -1,0 +1,19 @@
+Conceito DW e Modelagem:
+1)
+	Kimball = bottom-up, desnormalizado, arquitetura estrela, rápido de construir, fácil de compreender, consulta e análise simplificada, divisão entre tabelas fatos e dimensões.
+	Inmon = top-down,normalizado(3FN), integração e consistência dos dados, lento para construir, manutenção controlada
+
+2)
+	Star Schema = fato no centro e dimensões envolta, desnormalizado (dimensões com todos os atributos na tabela), rápido para consultas, user friendly, redundância maior, mais espaço ocupado e mais fácil de manter.
+	Snowflake Schema = fato no centro e dimensões de dimensões, normalizado, lento (muitos joins), complexo, menos espaço ocupado e difícil de manter.
+
+Excel
+1) Dimensões = cliente, vendedor, seguradora, periodo
+2) Fatos = cada modalidade
+3) Tirar as redundâncias da tabela (data), coluna do código vendedor tem que ter números de 4 dígitos e não pode ter letra,
+
+Perguntas:
+1. O que é um data warehouse?
+2. O que é um Star Schema? O que é um Snow Flake Schema?
+3. Vantagens de cada abordagem de data warehouse e schema
+4. 
