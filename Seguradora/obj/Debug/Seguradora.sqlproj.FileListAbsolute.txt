@@ -1,0 +1,10 @@
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\bin\Debug\Seguradora.dacpac
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\bin\Debug\Seguradora.dll
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\bin\Debug\Seguradora.pdb
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\Seguradora.sqlproj.AssemblyReference.cache
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\Model.xml
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\refactor.xml
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\postdeploy.sql
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\predeploy.sql
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\Seguradora.dll
+C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\Seguradora\obj\Debug\Seguradora.pdb

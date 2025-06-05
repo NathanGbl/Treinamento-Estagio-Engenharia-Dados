@@ -15,7 +15,6 @@ Excel
 
 Dimensões:
 -CLIENTE:
-	--ID_CLIENTE
 	--CNPJ
 	--RAZAOSOCIAL
 	--UF

@@ -1,0 +1,2692 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/30/2025 3:31:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC-EXATA"
+  DTS:CreatorName="PC-EXATA\natha"
+  DTS:DTSID="{DB606E60-5295-45F7-A496-BAD4BA319594}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{C61F346B-F1A7-4FC4-AD51-914DC042E97A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Base]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{7C4E54C6-156B-4F93-90E5-BE04A684C2C3}"
+      DTS:ObjectName="Base">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\natha\source\repos\projeto\Treinamento-Estagio-Engenharia-Dados\SeguradorasNormalização 1.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3A56A975-7593-4CA7-A6EA-FD46B400BC3B}"
+      DTS:ObjectName="PC-EXATA\SERVERSQLL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PC-EXATA\SERVERSQLL;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{3A56A975-7593-4CA7-A6EA-FD46B400BC3B}PC-EXATA\SERVERSQLL;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.ODS_SEGURADORA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A3199744-CEF8-434B-BA1D-623394B5A4A5}"
+      DTS:ObjectName="PC-EXATA\SERVERSQLL.ODS_SEGURADORA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PC-EXATA\SERVERSQLL;Initial Catalog=ODS_SEGURADORA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{A3199744-CEF8-434B-BA1D-623394B5A4A5}PC-EXATA\SERVERSQLL.ODS_SEGURADORA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9AFA5AAD-0604-4929-BA2A-9DF229AD104B}"
+      DTS:ObjectName="PC-EXATA\SERVERSQLL.STAGE_SEGURADORA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=PC-EXATA\SERVERSQLL;Initial Catalog=STAGE_SEGURADORA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9AFA5AAD-0604-4929-BA2A-9DF229AD104B}PC-EXATA\SERVERSQLL.STAGE_SEGURADORA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARRAGA FILES"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B3824E79-7345-4206-AAC1-C579562E7761}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARRAGA FILES">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARRAGA FILES\FILE_CLIENTE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{066AAAAA-1F46-41E9-A293-28E3842BF460}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FILE_CLIENTE">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="FILE_CLIENTE"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[FILE_CLIENTE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].Columns[Cliente CNPJ]"
+                          cachedDataType="r8"
+                          cachedName="Cliente CNPJ"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente CNPJ]"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente CNPJ]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].Columns[Cliente Razão Social]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Cliente Razão Social"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente Razão Social]"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente Razão Social]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].Columns[Cliente UF]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Cliente UF"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente UF]"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente UF]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente CNPJ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente CNPJ" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente Razão Social" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente UF" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem do Excel"
+                  name="IMPORTA COLUNAS DO CLIENTE"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">Plan1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O mapeamento de parâmetros no comando SQL para variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Base]"
+                      connectionManagerRefId="Package.ConnectionManagers[Base]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel]"
+                      name="Saída de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente CNPJ]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente CNPJ]"
+                          name="Cliente CNPJ"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente Razão Social]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente Razão Social]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente Razão Social]"
+                          name="Cliente Razão Social"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente UF]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente UF]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].Columns[Cliente UF]"
+                          name="Cliente UF"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Nota]"
+                          dataType="r8"
+                          name="Cod_Nota" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Ano]"
+                          dataType="r8"
+                          name="Mês Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Descrição" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          name="Data" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Ano]"
+                          dataType="r8"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Revenda]"
+                          dataType="wstr"
+                          length="255"
+                          name="Revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          dataType="r8"
+                          name="Código Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          dataType="r8"
+                          name="Cliente CNPJ" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente Razão Social" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente UF" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Modalidade]"
+                          dataType="wstr"
+                          length="255"
+                          name="Modalidade" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Qtd Notas]"
+                          dataType="r8"
+                          name="Qtd Notas" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Valor Bruto]"
+                          dataType="r8"
+                          name="Valor Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Lucro Bruto]"
+                          dataType="r8"
+                          name="Lucro Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Preco Cheio]"
+                          dataType="r8"
+                          name="Preco Cheio" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_NUM]"
+                          dataType="r8"
+                          name="ANO_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[MES_NUM]"
+                          dataType="r8"
+                          name="MES_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora (grupos)" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente CNPJ]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente CNPJ]"
+                          name="Cliente CNPJ" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente Razão Social]"
+                          name="Cliente Razão Social" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente UF]"
+                          name="Cliente UF" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARRAGA FILES\FILE_CLIENTE.Paths[Saída de Origem do Excel]"
+                  endId="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem do Excel"
+                  startId="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE.Outputs[Saída de Origem do Excel]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARRAGA FILES\FILE_PERIODO"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{A5984E25-5EA1-441F-871C-3BB21448D1CD}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FILE_PERIODO"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="FILE_PERIODO"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[FILE_PERIODO]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].Columns[Ano]"
+                          cachedDataType="r8"
+                          cachedName="Ano"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Ano]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].Columns[MES_NUM]"
+                          cachedDataType="r8"
+                          cachedName="MES_NUM"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[MES_NUM]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[MES_NUM]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].Columns[Mês Descrição]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Mês Descrição"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Mês Descrição]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Mês Descrição]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].Columns[Mês Ano]"
+                          cachedDataType="r8"
+                          cachedName="Mês Ano"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Mês Ano]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Mês Ano]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].Columns[Data]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Data"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Data]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Data]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].Columns[ANO_NUM]"
+                          cachedDataType="r8"
+                          cachedName="ANO_NUM"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[ANO_NUM]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[ANO_NUM]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Ano]"
+                          dataType="wstr"
+                          length="255"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[MES_NUM]"
+                          dataType="wstr"
+                          length="255"
+                          name="MES_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Descrição" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Mês Ano]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          name="Data" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB].ExternalColumns[ANO_NUM]"
+                          dataType="wstr"
+                          length="255"
+                          name="ANO_NUM" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem do Excel"
+                  name="IMPORTA DADOS PERIODO"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">Plan1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O mapeamento de parâmetros no comando SQL para variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Base]"
+                      connectionManagerRefId="Package.ConnectionManagers[Base]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel]"
+                      name="Saída de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Ano]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Ano]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Ano]"
+                          name="Ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[MES_NUM]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[MES_NUM]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[MES_NUM]"
+                          name="MES_NUM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Mês Descrição]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Descrição]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Mês Descrição]"
+                          name="Mês Descrição"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Mês Ano]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Ano]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Mês Ano]"
+                          name="Mês Ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Data]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Data]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[Data]"
+                          name="Data"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[ANO_NUM]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_NUM]"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].Columns[ANO_NUM]"
+                          name="ANO_NUM"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Nota]"
+                          dataType="r8"
+                          name="Cod_Nota" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Ano]"
+                          dataType="r8"
+                          name="Mês Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Descrição" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          name="Data" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Ano]"
+                          dataType="r8"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Revenda]"
+                          dataType="wstr"
+                          length="255"
+                          name="Revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          dataType="r8"
+                          name="Código Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          dataType="r8"
+                          name="Cliente CNPJ" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente Razão Social" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente UF" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Modalidade]"
+                          dataType="wstr"
+                          length="255"
+                          name="Modalidade" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Qtd Notas]"
+                          dataType="r8"
+                          name="Qtd Notas" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Valor Bruto]"
+                          dataType="r8"
+                          name="Valor Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Lucro Bruto]"
+                          dataType="r8"
+                          name="Lucro Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Preco Cheio]"
+                          dataType="r8"
+                          name="Preco Cheio" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_NUM]"
+                          dataType="r8"
+                          name="ANO_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[MES_NUM]"
+                          dataType="r8"
+                          name="MES_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora (grupos)" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Ano]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Ano]"
+                          name="Ano" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[MES_NUM]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[MES_NUM]"
+                          name="MES_NUM" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Mês Descrição]"
+                          name="Mês Descrição" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Mês Ano]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Mês Ano]"
+                          name="Mês Ano" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[Data]"
+                          name="Data" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[ANO_NUM]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Erro de Origem do Excel].Columns[ANO_NUM]"
+                          name="ANO_NUM" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARRAGA FILES\FILE_PERIODO.Paths[Saída de Origem do Excel]"
+                  endId="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem do Excel"
+                  startId="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO.Outputs[Saída de Origem do Excel]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARRAGA FILES\FILE_SEGURADORA"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{A9032B24-7779-4A82-9C28-4BA825CA0EF6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FILE_SEGURADORA"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="FILE_SEGURADORA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[FILE_SEGURADORA]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB].Columns[Seguradora]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Seguradora"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB].ExternalColumns[Seguradora]"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].Columns[Seguradora]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB].Columns[Seguradora (grupos)]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Seguradora (grupos)"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB].ExternalColumns[Seguradora (grupos)]"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].Columns[Seguradora (grupos)]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB].ExternalColumns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora (grupos)" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem do Excel"
+                  name="IMPORTA DADOS SEGURADORA"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">Plan1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O mapeamento de parâmetros no comando SQL para variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Base]"
+                      connectionManagerRefId="Package.ConnectionManagers[Base]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel]"
+                      name="Saída de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].Columns[Seguradora]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].Columns[Seguradora]"
+                          name="Seguradora"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].Columns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora (grupos)]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].Columns[Seguradora (grupos)]"
+                          name="Seguradora (grupos)"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Nota]"
+                          dataType="r8"
+                          name="Cod_Nota" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Ano]"
+                          dataType="r8"
+                          name="Mês Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Descrição" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          name="Data" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Ano]"
+                          dataType="r8"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Revenda]"
+                          dataType="wstr"
+                          length="255"
+                          name="Revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          dataType="r8"
+                          name="Código Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          dataType="r8"
+                          name="Cliente CNPJ" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente Razão Social" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente UF" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Modalidade]"
+                          dataType="wstr"
+                          length="255"
+                          name="Modalidade" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Qtd Notas]"
+                          dataType="r8"
+                          name="Qtd Notas" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Valor Bruto]"
+                          dataType="r8"
+                          name="Valor Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Lucro Bruto]"
+                          dataType="r8"
+                          name="Lucro Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Preco Cheio]"
+                          dataType="r8"
+                          name="Preco Cheio" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_NUM]"
+                          dataType="r8"
+                          name="ANO_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[MES_NUM]"
+                          dataType="r8"
+                          name="MES_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora (grupos)" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[Seguradora]"
+                          name="Seguradora" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Erro de Origem do Excel].Columns[Seguradora (grupos)]"
+                          name="Seguradora (grupos)" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARRAGA FILES\FILE_SEGURADORA.Paths[Saída de Origem do Excel]"
+                  endId="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem do Excel"
+                  startId="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA.Outputs[Saída de Origem do Excel]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARRAGA FILES\FILE_VENDAS"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{9CBC13EA-A20A-45B5-8F64-49EB04DEFFF1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FILE_VENDAS"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="FILE_VENDAS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[FILE_VENDAS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[Cod_Nota]"
+                          cachedDataType="r8"
+                          cachedName="Cod_Nota"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Nota]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Cod_Nota]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[ID_VENDEDOR]"
+                          cachedDataType="r8"
+                          cachedName="ID_VENDEDOR"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_VENDEDOR]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[ID_VENDEDOR]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[ID_CLIENTE]"
+                          cachedDataType="r8"
+                          cachedName="ID_CLIENTE"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CLIENTE]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[ID_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[DESC]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="DESC"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DESC]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[DESC]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[Qtd Notas]"
+                          cachedDataType="r8"
+                          cachedName="Qtd Notas"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Qtd Notas]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Qtd Notas]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[Valor Bruto]"
+                          cachedDataType="r8"
+                          cachedName="Valor Bruto"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Valor Bruto]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Valor Bruto]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[Lucro Bruto]"
+                          cachedDataType="r8"
+                          cachedName="Lucro Bruto"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Lucro Bruto]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Lucro Bruto]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].Columns[Preco Cheio]"
+                          cachedDataType="r8"
+                          cachedName="Preco Cheio"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Preco Cheio]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Preco Cheio]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cod_Nota]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cod_Nota" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_VENDEDOR]"
+                          dataType="wstr"
+                          length="255"
+                          name="ID_VENDEDOR" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CLIENTE]"
+                          dataType="wstr"
+                          length="255"
+                          name="ID_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DESC]"
+                          dataType="wstr"
+                          length="255"
+                          name="DESC" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Qtd Notas]"
+                          dataType="wstr"
+                          length="255"
+                          name="Qtd Notas" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Valor Bruto]"
+                          dataType="wstr"
+                          length="255"
+                          name="Valor Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Lucro Bruto]"
+                          dataType="wstr"
+                          length="255"
+                          name="Lucro Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB].ExternalColumns[Preco Cheio]"
+                          dataType="wstr"
+                          length="255"
+                          name="Preco Cheio" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem do Excel"
+                  name="IMPORTA DADOS VENDA"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">Plan1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O mapeamento de parâmetros no comando SQL para variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Base]"
+                      connectionManagerRefId="Package.ConnectionManagers[Base]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel]"
+                      name="Saída de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Cod_Nota]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Nota]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Cod_Nota]"
+                          name="Cod_Nota"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[ID_VENDEDOR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[ID_VENDEDOR]"
+                          name="ID_VENDEDOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[ID_CLIENTE]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[ID_CLIENTE]"
+                          name="ID_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[DESC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Modalidade]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[DESC]"
+                          name="DESC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Qtd Notas]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Qtd Notas]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Qtd Notas]"
+                          name="Qtd Notas"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Valor Bruto]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Valor Bruto]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Valor Bruto]"
+                          name="Valor Bruto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Lucro Bruto]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Lucro Bruto]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Lucro Bruto]"
+                          name="Lucro Bruto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Preco Cheio]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Preco Cheio]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].Columns[Preco Cheio]"
+                          name="Preco Cheio"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Nota]"
+                          dataType="r8"
+                          name="Cod_Nota" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Ano]"
+                          dataType="r8"
+                          name="Mês Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Descrição" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          name="Data" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Ano]"
+                          dataType="r8"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Revenda]"
+                          dataType="wstr"
+                          length="255"
+                          name="Revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          dataType="r8"
+                          name="Código Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          dataType="r8"
+                          name="Cliente CNPJ" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente Razão Social" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente UF" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Modalidade]"
+                          dataType="wstr"
+                          length="255"
+                          name="Modalidade" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Qtd Notas]"
+                          dataType="r8"
+                          name="Qtd Notas" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Valor Bruto]"
+                          dataType="r8"
+                          name="Valor Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Lucro Bruto]"
+                          dataType="r8"
+                          name="Lucro Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Preco Cheio]"
+                          dataType="r8"
+                          name="Preco Cheio" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_NUM]"
+                          dataType="r8"
+                          name="ANO_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[MES_NUM]"
+                          dataType="r8"
+                          name="MES_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora (grupos)" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Cod_Nota]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Cod_Nota]"
+                          name="Cod_Nota" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Código Vendedor]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Código Vendedor]"
+                          name="Código Vendedor" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente CNPJ]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente CNPJ]"
+                          name="Cliente CNPJ" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Modalidade]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Modalidade]"
+                          name="Modalidade" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Qtd Notas]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Qtd Notas]"
+                          name="Qtd Notas" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Valor Bruto]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Valor Bruto]"
+                          name="Valor Bruto" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Lucro Bruto]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Lucro Bruto]"
+                          name="Lucro Bruto" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Preco Cheio]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Erro de Origem do Excel].Columns[Preco Cheio]"
+                          name="Preco Cheio" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARRAGA FILES\FILE_VENDAS.Paths[Saída de Origem do Excel]"
+                  endId="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem do Excel"
+                  startId="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA.Outputs[Saída de Origem do Excel]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARRAGA FILES\FILE_VENDEDOR"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{70F06909-F3E9-4748-A120-B7950CC74B8D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FILE_VENDEDOR"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="FILE_VENDEDOR"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[FILE_VENDEDOR]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      connectionManagerRefId="Package.ConnectionManagers[PC-EXATA\SERVERSQLL.STAGE_SEGURADORA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].Columns[Vendedor]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Vendedor"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].ExternalColumns[Vendedor]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Vendedor]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].Columns[Seguradora]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Seguradora"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].ExternalColumns[Seguradora]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Seguradora]" />
+                        <inputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].Columns[Código Vendedor]"
+                          cachedDataType="r8"
+                          cachedName="Código Vendedor"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].ExternalColumns[Código Vendedor]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Código Vendedor]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].ExternalColumns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB].ExternalColumns[Código Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Código Vendedor" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem do Excel"
+                  name="IMPORTA DADOS VENDEDOR"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">Plan1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O mapeamento de parâmetros no comando SQL para variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Base]"
+                      connectionManagerRefId="Package.ConnectionManagers[Base]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel]"
+                      name="Saída de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Vendedor]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Vendedor]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Vendedor]"
+                          name="Vendedor"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Seguradora]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Seguradora]"
+                          name="Seguradora"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Código Vendedor]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].Columns[Código Vendedor]"
+                          name="Código Vendedor"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Cod_Nota]"
+                          dataType="r8"
+                          name="Cod_Nota" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Ano]"
+                          dataType="r8"
+                          name="Mês Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Mês Descrição]"
+                          dataType="wstr"
+                          length="255"
+                          name="Mês Descrição" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Data]"
+                          dataType="wstr"
+                          length="255"
+                          name="Data" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Ano]"
+                          dataType="r8"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Revenda]"
+                          dataType="wstr"
+                          length="255"
+                          name="Revenda" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Código Vendedor]"
+                          dataType="r8"
+                          name="Código Vendedor" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente CNPJ]"
+                          dataType="r8"
+                          name="Cliente CNPJ" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente Razão Social]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente Razão Social" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente UF]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cliente UF" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Modalidade]"
+                          dataType="wstr"
+                          length="255"
+                          name="Modalidade" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Qtd Notas]"
+                          dataType="r8"
+                          name="Qtd Notas" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Valor Bruto]"
+                          dataType="r8"
+                          name="Valor Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Lucro Bruto]"
+                          dataType="r8"
+                          name="Lucro Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Preco Cheio]"
+                          dataType="r8"
+                          name="Preco Cheio" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[ANO_NUM]"
+                          dataType="r8"
+                          name="ANO_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[MES_NUM]"
+                          dataType="r8"
+                          name="MES_NUM" />
+                        <externalMetadataColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel].ExternalColumns[Seguradora (grupos)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Seguradora (grupos)" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[Vendedor]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[Vendedor]"
+                          name="Vendedor" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[Seguradora]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[Seguradora]"
+                          name="Seguradora" />
+                        <outputColumn
+                          refId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[Código Vendedor]"
+                          dataType="r8"
+                          lineageId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Erro de Origem do Excel].Columns[Código Vendedor]"
+                          name="Código Vendedor" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARRAGA FILES\FILE_VENDEDOR.Paths[Saída de Origem do Excel]"
+                  endId="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem do Excel"
+                  startId="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR.Outputs[Saída de Origem do Excel]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARRAGA FILES\TRUNCA FILES"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CE22AF4E-CFAF-4CD9-AE3B-AB555CA499AE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCA FILES"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9AFA5AAD-0604-4929-BA2A-9DF229AD104B}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE FILE_CLIENTE&#xA;TRUNCATE TABLE FILE_VENDEDOR&#xA;TRUNCATE TABLE FILE_SEGURADORA&#xA;TRUNCATE TABLE FILE_VENDAS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARRAGA FILES.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{845256C0-8FD7-423D-AF65-A8398D47A946}"
+          DTS:From="Package\CARRAGA FILES\TRUNCA FILES"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\CARRAGA FILES\FILE_CLIENTE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{4DF27C3A-A579-42ED-88DA-F9B2AC743EA0}"
+          DTS:From="Package\CARRAGA FILES\FILE_CLIENTE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\CARRAGA FILES\FILE_VENDEDOR" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{A85F91ED-A757-45F1-A10A-84FDE36B1649}"
+          DTS:From="Package\CARRAGA FILES\FILE_VENDEDOR"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\CARRAGA FILES\FILE_SEGURADORA" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{38000D93-8649-4B09-9076-500581409C11}"
+          DTS:From="Package\CARRAGA FILES\FILE_SEGURADORA"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\CARRAGA FILES\FILE_PERIODO" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{B1C00CB0-E1D1-4132-8414-EABDC6940055}"
+          DTS:From="Package\CARRAGA FILES\FILE_PERIODO"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\CARRAGA FILES\FILE_VENDAS" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\CARRAGA FILES\FILE_CLIENTE"
+          TopLeft="22.5,137.5" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES.PrecedenceConstraints[Constraint]"
+          TopLeft="239.5,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-139.5,60"
+              Start="0,0"
+              End="-139.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-135.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135.5,30"
+                    Point2="-139.5,30"
+                    Point3="-139.5,34" />
+                  <mssgle:LineSegment
+                    End="-139.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 1]"
+          TopLeft="177.5,161.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.5,0"
+              Start="0,0"
+              End="80,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\CARRAGA FILES\FILE_PERIODO"
+          TopLeft="12,238" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 3]"
+          TopLeft="260,261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89,0"
+              Start="0,0"
+              End="-81.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-81.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 4]"
+          TopLeft="94.25,280">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187,42"
+          Id="Package\CARRAGA FILES\FILE_SEGURADORA"
+          TopLeft="260,242" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES.PrecedenceConstraints[Constraint 2]"
+          TopLeft="352,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\CARRAGA FILES\FILE_VENDAS"
+          TopLeft="20,351" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\CARRAGA FILES\FILE_VENDEDOR"
+          TopLeft="265,144" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\CARRAGA FILES\TRUNCA FILES"
+          TopLeft="160.5,35.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="453,443"
+          Size="453,486"
+          Id="Package\CARRAGA FILES"
+          TopLeft="367,54" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARRAGA FILES\FILE_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="254,42"
+          Id="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE"
+          TopLeft="314,120" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE"
+          TopLeft="361,320" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES\FILE_CLIENTE.Paths[Saída de Origem do Excel]"
+          TopLeft="439.75,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,158"
+              Start="0,0"
+              End="0,150.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,150.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_CLIENTE\IMPORTA COLUNAS DO CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARRAGA FILES\FILE_PERIODO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225,42"
+          Id="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO"
+          TopLeft="453,113" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO"
+          TopLeft="486,284" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES\FILE_PERIODO.Paths[Saída de Origem do Excel]"
+          TopLeft="565.5,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,129"
+              Start="0,0"
+              End="0,121.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,121.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_PERIODO\FILE_PERIODO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_PERIODO\IMPORTA DADOS PERIODO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARRAGA FILES\FILE_SEGURADORA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252,42"
+          Id="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA"
+          TopLeft="422,94" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA"
+          TopLeft="454,238" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES\FILE_SEGURADORA.Paths[Saída de Origem do Excel]"
+          TopLeft="547.75,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102"
+              Start="0,0"
+              End="0,94.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,94.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_SEGURADORA\FILE_SEGURADORA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_SEGURADORA\IMPORTA DADOS SEGURADORA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARRAGA FILES\FILE_VENDAS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS"
+          TopLeft="444,280" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA"
+          TopLeft="418,141" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES\FILE_VENDAS.Paths[Saída de Origem do Excel]"
+          TopLeft="522.5,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97"
+              Start="0,0"
+              End="0,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_VENDAS\FILE_VENDAS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_VENDAS\IMPORTA DADOS VENDA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARRAGA FILES\FILE_VENDEDOR">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR"
+          TopLeft="322,104" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR"
+          TopLeft="356,262" />
+        <EdgeLayout
+          Id="Package\CARRAGA FILES\FILE_VENDEDOR.Paths[Saída de Origem do Excel]"
+          TopLeft="440.75,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,116"
+              Start="0,0"
+              End="0,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_VENDEDOR\FILE_VENDEDOR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_VENDEDOR\IMPORTA DADOS VENDEDOR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARRAGA FILES\FILE_CLIENTE\FILE_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b1f56dca-987e-4575-9d60-4c684ee00157" ChangeDateTime="05/30/2025 18:10:14">
+    <Property Name="ElementName" Value="[dbo].[FILE_VENDEDOR].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FILE_VENDEDOR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_VENDEDOR" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7343299d-132b-41a2-9971-d69eea7474a6" ChangeDateTime="05/30/2025 18:10:56">
+    <Property Name="ElementName" Value="[dbo].[FILE_VENDEDOR].[ID_VENDEDOR]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FILE_VENDEDOR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_CLIENTE" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2b523b3c-c417-48fa-82c0-053c8d8fa6be" ChangeDateTime="05/30/2025 18:11:10">
+    <Property Name="ElementName" Value="[dbo].[FILE_VENDEDOR].[COD_NOTA]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FILE_VENDEDOR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CNPJ" />
+  </Operation>
+</Operations>
