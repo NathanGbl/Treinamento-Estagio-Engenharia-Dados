@@ -1,0 +1,43 @@
+1. Necessidade do DW
+    R: Empresas querem conhecer os seus cliente e mercado (CRM), para isso
+    precisavam fazer análises mais profundas (mais tempo). Porém, as empresas 
+    geralmente só armazenavam dados do ano atual, para economizar espaço.
+
+2. OLAP
+    R: Ferramentas que permitem a análise de dados e a visualização dos dados
+    sob várias perspectivas.
+
+3. Resultado de um projeto de DW
+    R: Informação disponível para gestão, visão de curvas de comportamento,
+    agilidade de ferramentas para apoio à decisão, segurança de informações para 
+    decisão.
+
+4. Características do DW
+    R: Extração de dados de fontes heterogêneas, transformação e integração dos 
+    dados antes da carga final, visualização dos dados em diferentes níveis, dados
+    são somente inseridos.
+        Orientado por assunto: o DW armazena informações agrupadas por assuntos
+        de interesse da empresa.
+        Variação por tempo: os dados do DW são relativos ao tempo (dados históricos)
+        Não volátil: os dados do DW ficam armazenados sem sofrer alterações até
+        que se decida que não fazem mais parte do DW ou que ele não é importante
+        para as análises.
+        Integração: dada as variações da representação da mesma informação, é
+        necessária a unificação da verdade.
+
+5. Arquitetura do DW
+    R: DW é constituído de Data Marts, que são mais específicos (exemplo prateleiras).
+
+6. O que é o BI Competency Center
+    R: Transforma dados coletados em conhecimento para a empresa do DW.
+
+7. Processo de Data Warehouse
+    R: Consiste na extração dos dados, na organização e integração desses dados
+    de forma consistente para o DW.
+
+8. O que é ODS
+    R: Armazenamento intermediário dos dados, armazena dados correntes (por isso
+    temporário). DDS é uma variação do ODS onde os dados não são voláteis e se faz
+    alterações incrementais podendo se tornar futuramente o DW.
+
+Pág 42
