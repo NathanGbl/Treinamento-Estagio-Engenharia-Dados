@@ -27,6 +27,10 @@
 
 5. Arquitetura do DW
     R: DW é constituído de Data Marts, que são mais específicos (exemplo prateleiras).
+    Arquitetura Global: o DW é projetado com base nas necessidades da empresa toda.
+    Arquitetura de Data Mart Independente: Data Marts controlados por um grupo
+    específico de usuários e atende a necessidades departamentais sem foco
+    corporativo.
 
 6. O que é o BI Competency Center
     R: Transforma dados coletados em conhecimento para a empresa do DW.
@@ -40,4 +44,135 @@
     temporário). DDS é uma variação do ODS onde os dados não são voláteis e se faz
     alterações incrementais podendo se tornar futuramente o DW.
 
-Pág 42
+9. Formas de transferir os dados para a staging armazena
+    R: Arquivos são gerados na origem e carregados na staging area como flat files.
+    Ou usar os flat files, se refletirem exportação de tabelas, como carga de um
+    modelo de dados ER parecido com a origem para o ODS (a staging area fica
+    totalmente relacional). Ou, se os ambientes são similares tanto na produção
+    quanto na staging area, usa flat files para up load de cópias do ambiente
+    legado na staging area.
+
+10. Objetivo da Area staging
+    R: Ambiente intermediário de armazenamento e processamento dos dados vindos de
+    OLTP e outras fontes, para ETL.
+
+11. O que é DW, DM e BD Individuais ou Cubos
+    R: DW é uma grande base de dados capaz de integrar de forma concisa e confiável,
+    as Informações de interesse para a empresa. DM é um subconjunto de dados do
+    DW, serve para acesso descentralizado. BD Individuais ou Cubos serve para
+    armazenar apenas dados de interesse, reduzindo a quantidade de informação
+    (granularidade) e acelerando o processo.
+
+12. Processo de DW
+    R: Sistema OLTP(projetar, mapear) -> ETL -> DW(carregar, indexar, agregar) ->
+    DM(replicar, distribuir os dados) -> Sistema OLAP (Acesso e análise, utilização
+    estratégica das informações - OLAP)
+
+13. Fatores para escolher uma arquitetura de DW
+    R: Infraestrutura disponível, porte da empresa, escopo e abrangência desejado e
+    capacitação dos empregados e dos investimentos realizados.
+
+14. Implementação Top Down
+    R: Grande trabalho inicial para reunir informações. O processo é o ETL das
+    informações dos sistemas operativos e dados externos para ODS ou das fontes 
+    operacionais, e depois os dados são enviados para o DW.
+
+15. Vantagens Implementação Top Down
+    R: Herença de arquitetura: DM originado do DW usa a arquitetura e dados do DW,
+    ou seja, fácil manutenção.
+    Visão de empreendimento: DW concentra todos os negócios da empresa, permitindo
+    coletar dele níveis meneres de informações.
+    Repositório de metadados centralizado e simples: permite manutenções mais
+    simples do que aquelas realizadas em múltiplos repositórios.
+    Controle e centralização de regras: existência de um único conjunto de aplicações
+    para ETL e centraliza a manutenção e monitoração.
+
+16. Desvantagens Implementação Top Down
+    R: Implementação demorada: devido a ser orientado a assunto e precisar integrar-los
+    a implementação é demorada. 
+    Alta taxa de risco: não existem garantias para o investimento nesse tipo de
+    ambiente.
+    Expectativas relacionadas ao ambiente: a demora do projeto e a falta de retorno
+    podem induzir expectativas nos usuários.
+
+17. Implementação Bottom Up
+    R: Tem o propósito de construir um DW incremental a partir de DM independentes.
+    O processo consiste no ETL para um ou mais DM que são, normalmente, modelados
+    dimensionalmente.
+
+18. Vantagens Implementação Bottom Up
+    R: Implementação rápida: a construção dos DM é bem direcionada, permitindo
+    a sua implementação rápida.
+    Retorno rápido: pelo desenvolvimento incremental do DW, há garantia de
+    investimentos adicionais para conclusão do projeto.
+    Manutenção do enfoque da equipe: permite focar nas principais áreas da empresa.
+    Herança incremental: desenvolvimento incremental do DW exige recursos de 
+    informação passo a passo, permitindo à equipe crescer e aprender. Avaliação
+    de ferramentas, tecnologias, consultores e vendedores só é realizada 1 vez, a
+    não ser que haja restrições que impeçam o reaproveitamento.
+
+19. Desvantagens Implementação Bottom Up
+    R: Perigo de legamarts: pela facilidade de desenvolver soluções individuais,
+    essas soluções acabam por não considerar a arquitetura de forma global. Isso
+    dificulta a integração futura ao DW.
+    Desafio de possuir a visão de empreendimento: deve-se manter um rígido 
+    controle do negócio.
+    Administrar e coordenar múltiplas equipes e iniciativas: desenvolver DM em 
+    paralelo exige rígida administração.
+    Maldição de sucesso: Usuários finais querendo mais informação para seus DM e
+    outros usuários querendo incrementar seus DM.
+
+20. Características da Implementação Combinada
+    R: Implementação: Planejamento Top Down, Processos de Negócio.
+    Desenvolvimento Bottom Up: Um DM de cada vez, cada Data Mart encarado de forma 
+    evolutiva: Complexidade do modelo, Volume de dados, investmentos.
+    Gestão de Metadados: Coerência entre os vários Data Marts
+
+21. O que é granularidade de dados
+    R: Refere-se ao nível de sumarização dos elementos e de detalhe disponíveis 
+    nos dados. Quanto mais detalhe existir, menor é a granularidade. Quanto menos
+    detalhes existir, maior é a granularidade. Granularidade maior significa
+    dificultar a utilização dos dados para consultas. Granularidade menor significa
+    ser possível consultar qualquer coisa.
+
+22. Definição de Fato
+    R: É uma coleção de itens de dados, composta de dados de medidas e de contexto.
+    A tabela de fato representa valores numéricos, variam ao longo do tempo e
+    seu histórico pode ser mantido e cresce com o passar do tempo.
+
+23. Definição de Dimensões
+    R: São detalhamentos do fato. Ou seja, respondem a perguntas como "Quando
+    aconteceu isso?", "Quem fez isso?", "Quem sofreu isso?", etc. 
+
+24. Definição de Medidas
+    R: São atributos numéricos que representam um fato, por exemplo valor da venda,
+    número de produtos vendidos, quantidade em estoque, etc.
+
+25. Exemplo do cubo
+    R: A medida seria o encontro dos eixos do cubo (dim_tempo x dim_localizacao x dim_produto).
+    A dimensão seria o eixo do cubo.
+
+26. Drill Down e ROll Up
+    R: Drill Down: o usuário aumenta o nível de detalhe da informação (- granularidade).
+    Roll Up ou Drill Up: é o contrário do drill down, o usuário diminui o nível 
+    de detalhe (+ granularidade).
+    Drill across:  Pular um nível de detalhe.
+    Drill Throught: Passa de uma informação de uma dimensão para outra dimensão.
+    Slice and Dice: é o mesmo que filtrar os dados do DW e mudar a ordem das 
+    dimensões.
+
+27. Pivot
+    R: modificação da posição dimensões em um gráfico ou troca de linhas por 
+    colunas em uma tabela.
+
+28. Star Schema
+    R: fato no centro e dimensões envolta da fato. Ou seja, fato ligada diretamente
+    a dimensão.
+
+29. Snowflake
+    R: fato no centro e dimensões derivadas de outras dimensões.
+
+30. Dimensão Tempo
+    R: A única dimensão que todo DM deve ter e a única presente em todo DW.
+
+pag 118
