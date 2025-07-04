@@ -167,12 +167,20 @@
 
 28. Star Schema
     R: fato no centro e dimensões envolta da fato. Ou seja, fato ligada diretamente
-    a dimensão.
+    a dimensão. Dimensões não norm
 
 29. Snowflake
-    R: fato no centro e dimensões derivadas de outras dimensões.
+    R: fato no centro e dimensões derivadas de outras dimensões. Dimensões 
+    normalizadas.
 
 30. Dimensão Tempo
     R: A única dimensão que todo DM deve ter e a única presente em todo DW.
+
+31. Roteiro para inserção de dado relativo a tempo
+    R: Agrupa registros por mês > identifica o mês na tabela tempo > 
+    obtém a chave tempo > utiliza chave tempo na tabela fato
+
+32.
+
 
 pag 118
