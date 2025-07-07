@@ -149,8 +149,9 @@
     número de produtos vendidos, quantidade em estoque, etc.
 
 25. Exemplo do cubo
-    R: A medida seria o encontro dos eixos do cubo (dim_tempo x dim_localizacao x dim_produto).
-    A dimensão seria o eixo do cubo.
+    R: A medida seria o encontro dos eixos do cubo (dim_tempo x dim_localizacao 
+    x dim_produto). Além disso, cada quadradinho é uma medida. A dimensão seria 
+    o eixo do cubo.
 
 26. Drill Down e ROll Up
     R: Drill Down: o usuário aumenta o nível de detalhe da informação (- granularidade).
@@ -171,7 +172,7 @@
 
 29. Snowflake
     R: fato no centro e dimensões derivadas de outras dimensões. Dimensões 
-    normalizadas.
+    normalizadas.   
 
 30. Dimensão Tempo
     R: A única dimensão que todo DM deve ter e a única presente em todo DW.
@@ -180,7 +181,10 @@
     R: Agrupa registros por mês > identifica o mês na tabela tempo > 
     obtém a chave tempo > utiliza chave tempo na tabela fato
 
-32.
+32. Snowflake x Star
+    R: Snowflake é usado para melhor visualização das hierarquias, economia de 
+    espaço e facilidade de entendimento. Star é usado pelos seguintes motivos: 
+    performance (menos joins) e fácil entendimento e manutenção.
 
 
-pag 118
+pag 188
