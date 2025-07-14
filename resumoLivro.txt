@@ -35,9 +35,6 @@
 6. O que é o BI Competency Center
     R: Transforma dados coletados em conhecimento para a empresa do DW.
 
-7. Processo de Data Warehouse
-    R: Consiste na extração dos dados, na organização e integração desses dados
-    de forma consistente para o DW.
 
 8. O que é ODS
     R: Armazenamento intermediário dos dados, armazena dados correntes (por isso

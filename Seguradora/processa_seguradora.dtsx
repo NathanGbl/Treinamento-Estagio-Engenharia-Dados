@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="processa_seguradora"
   DTS:PackageType="5"
-  DTS:VersionBuild="131"
-  DTS:VersionGUID="{07891D1C-EF50-412F-9E5A-08DDD1EC77B7}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{3DA54C19-8080-4C77-9FA6-19B2B7E93E47}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -185,19 +185,21 @@
                       <outputColumns>
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cod_Nota]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Cod_Nota]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cod_Nota]"
                           name="Cod_Nota"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Mês Ano]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Mês Ano]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Mês Ano]"
                           name="Mês Ano"
                           truncationRowDisposition="FailComponent" />
@@ -223,10 +225,11 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Ano]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Ano]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Ano]"
                           name="Ano"
                           truncationRowDisposition="FailComponent" />
@@ -262,10 +265,11 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cliente CNPJ]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Cliente CNPJ]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cliente CNPJ]"
                           name="Cliente CNPJ"
                           truncationRowDisposition="FailComponent" />
@@ -301,37 +305,41 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Qtd Notas]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Qtd Notas]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Qtd Notas]"
                           name="Qtd Notas"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Valor Bruto]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Valor Bruto]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Valor Bruto]"
                           name="Valor Bruto"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Lucro Bruto]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Lucro Bruto]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Lucro Bruto]"
                           name="Lucro Bruto"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Preco Cheio]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[Preco Cheio]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Preco Cheio]"
                           name="Preco Cheio"
                           truncationRowDisposition="FailComponent" />
@@ -347,19 +355,21 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[ANO_NUM]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[ANO_NUM]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[ANO_NUM]"
                           name="ANO_NUM"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[MES_NUM]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[MES_NUM]"
+                          length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[MES_NUM]"
                           name="MES_NUM"
                           truncationRowDisposition="FailComponent" />
@@ -372,6 +382,16 @@
                           length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Seguradora (grupos)]"
                           name="Seguradora (grupos)"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[DIA]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[DIA]"
+                          length="255"
+                          lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[DIA]"
+                          name="DIA"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -476,6 +496,11 @@
                           dataType="wstr"
                           length="255"
                           name="Seguradora (grupos)" />
+                        <externalMetadataColumn
+                          refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].ExternalColumns[DIA]"
+                          dataType="wstr"
+                          length="255"
+                          name="DIA" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -603,6 +628,12 @@
                           length="255"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Error Output].Columns[Seguradora (grupos)]"
                           name="Seguradora (grupos)" />
+                        <outputColumn
+                          refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Error Output].Columns[DIA]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Error Output].Columns[DIA]"
+                          name="DIA" />
                         <outputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -790,7 +821,8 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Cod_Nota]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Cod_Nota"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Cod_Nota]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cod_Nota]" />
@@ -803,7 +835,8 @@
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Data]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Ano]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Ano"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Ano]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Ano]" />
@@ -816,7 +849,8 @@
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Vendedor]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Cliente CNPJ]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Cliente CNPJ"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Cliente CNPJ]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cliente CNPJ]" />
@@ -836,25 +870,29 @@
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Modalidade]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Qtd Notas]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Qtd Notas"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Qtd Notas]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Qtd Notas]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Valor Bruto]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Valor Bruto"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Valor Bruto]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Valor Bruto]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Lucro Bruto]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Lucro Bruto"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Lucro Bruto]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Lucro Bruto]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Preco Cheio]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Preco Cheio"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Preco Cheio]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Preco Cheio]" />
@@ -867,13 +905,15 @@
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Seguradora]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[ANO_NUM]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="ANO_NUM"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[ANO_NUM]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[ANO_NUM]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[MES_NUM]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="MES_NUM"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[MES_NUM]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[MES_NUM]" />
@@ -913,7 +953,8 @@
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Código Vendedor]" />
                         <inputColumn
                           refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[Mês Ano]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Mês Ano"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Mês Ano]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Mês Ano]" />
@@ -1043,6 +1084,11 @@
                           dataType="wstr"
                           length="255"
                           name="NOME_ARQUIVO" />
+                        <externalMetadataColumn
+                          refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[DIA]"
+                          dataType="wstr"
+                          length="255"
+                          name="DIA" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1458,7 +1504,7 @@
           PanelSize="453,333"
           Size="453,376"
           Id="Package\CARREGA FILES"
-          TopLeft="94,507" />
+          TopLeft="125,449" />
         <NodeLayout
           Size="195,42"
           Id="Package\DW\MERGE_DM_CLIENTE"
@@ -1581,6 +1627,28 @@
           Id="Package\ODS\TRUNCA TMPS"
           TopLeft="189.25,20" />
         <EdgeLayout
+          Id="Package\ODS.PrecedenceConstraints[Constraint]"
+          TopLeft="204,118.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,0"
+              Start="0,0"
+              End="75.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\ODS.PrecedenceConstraints[Constraint 1]"
           TopLeft="366.5,140">
           <EdgeLayout.Curve>
@@ -1658,28 +1726,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ODS.PrecedenceConstraints[Constraint]"
-          TopLeft="204,118.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83,0"
-              Start="0,0"
-              End="75.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="75.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -1689,30 +1735,18 @@
           TopLeft="651,391" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="547,695">
+          TopLeft="578,635.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="104,-61"
+              EndConnector="73,0"
               Start="0,0"
-              End="96.5,-61">
+              End="65.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="48,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="48,0"
-                    Point2="52,0"
-                    Point3="52,-4" />
-                  <mssgle:LineSegment
-                    End="52,-57" />
-                  <mssgle:CubicBezierSegment
-                    Point1="52,-57"
-                    Point2="52,-61"
-                    Point3="56,-61" />
-                  <mssgle:LineSegment
-                    End="96.5,-61" />
+                    End="65.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1750,7 +1784,7 @@
     design-time-name="Package\CARREGA FILES\FILE_BASE_HISTORICA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158,42"
           Id="Package\CARREGA FILES\FILE_BASE_HISTORICA\Derived Column"
@@ -1794,9 +1828,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1830,9 +1862,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
