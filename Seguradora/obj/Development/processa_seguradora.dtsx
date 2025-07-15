@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="processa_seguradora"
   DTS:PackageType="5"
-  DTS:VersionBuild="133"
-  DTS:VersionGUID="{3DA54C19-8080-4C77-9FA6-19B2B7E93E47}">
+  DTS:VersionBuild="136"
+  DTS:VersionGUID="{8D24DF1C-51AC-4A6A-B6A2-F1C71E8AAC64}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -972,6 +972,13 @@
                           cachedName="Cliente Razão Social"
                           externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[Cliente Razão Social]"
                           lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[Cliente Razão Social]" />
+                        <inputColumn
+                          refId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].Columns[DIA]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="DIA"
+                          externalMetadataColumnId="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA.Inputs[OLE DB Destination Input].ExternalColumns[DIA]"
+                          lineageId="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX.Outputs[Excel Source Output].Columns[DIA]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1786,10 +1793,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="158,42"
-          Id="Package\CARREGA FILES\FILE_BASE_HISTORICA\Derived Column"
-          TopLeft="707,192" />
-        <NodeLayout
           Size="204,42"
           Id="Package\CARREGA FILES\FILE_BASE_HISTORICA\FILE_BASE_HISTORICA"
           TopLeft="482,298" />
@@ -1797,6 +1800,10 @@
           Size="208,42"
           Id="Package\CARREGA FILES\FILE_BASE_HISTORICA\ARQUIVO_BRUTO_XLSX"
           TopLeft="415,71" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\CARREGA FILES\FILE_BASE_HISTORICA\Derived Column"
+          TopLeft="707,192" />
         <EdgeLayout
           Id="Package\CARREGA FILES\FILE_BASE_HISTORICA.Paths[Excel Source Output]"
           TopLeft="519,113">

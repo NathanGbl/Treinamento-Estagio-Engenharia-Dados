@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>SEGURADORA</Name>
-    <LastWriteTime>2025-06-29T00:41:29.7311582Z</LastWriteTime>
+    <LastWriteTime>2025-07-15T17:18:08.1522765Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>processa_seguradora.dtsx</Name>
-      <LastWriteTime>2025-07-14T19:40:26.1062575Z</LastWriteTime>
+      <LastWriteTime>2025-07-15T17:18:04.110852Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
